@@ -1,4 +1,5 @@
 import random
+from unittest.util import three_way_cmp
 
 # -------------------------------------------- 
 
@@ -31,7 +32,10 @@ import random
 
   # --------------------------------------------
 
-
+print("How a Magic 8 Ball Works:")
+print('The user asks a question and vigoriously shakes the ball.') 
+print('Then the ball will respond with one of twenty responses, chosen at random')
+print('Thats pretty simple right')
 
 
 
@@ -76,10 +80,50 @@ import random
 
   # -------------------------------------------- 
 
-
-
-
-
+random.rand_int()
+0 = random.randint(1,20)
+if answer == 0:
+print("It is certain.")
+elif answer == 1:
+	print("It is decidedly so.")
+elif answer == 2:
+	print("Without a doubt.")
+elif answer == 3:
+	print('Yes - definitely.')
+elif answer == 4:
+	print('You may rely on it.')
+elif answer == 5:
+	print('As I see it, yes.')
+elif answer == 5:
+	print('Most likely.')
+elif answer == 6:
+	print('Most likely')
+elif answer == 7:
+	print("Outlook good.")
+elif answer == 8:
+	print("Yes.")
+elif answer == 9:
+	print("Signs point to yes.")
+elif answer == 10:
+	print("Reply hazy, try again.")
+elif answer == 11:
+	print("Ask again later.")
+elif answer == 12:
+	print("Better not tell you now.")
+elif answer == 13
+	print("Cannot predict now.")
+elif answer == 14:
+	print("Concentrate and ask again.")
+elif answer == 15:
+	print("Don't count on it.")
+elif answer == 16:
+	print("My reply is no.")
+elif answer == 17:
+	print ("My sources say no.")
+elif answer == 18:
+	print ("Outlook not so good.")
+else:
+	print("Very doubtful.")
 
 
 
