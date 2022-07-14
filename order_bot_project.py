@@ -41,9 +41,13 @@
 # Remember: Your user should be able to order at least 3 items (a drink, meal, and dessert item). 
 
 # --------------------------------------------
-
-
-
+print("soda,sandwich,applepie")
+item1 = "soda"
+item2 = "sandwich"
+item3 = "apple pie"
+item4 = "pepsi"
+item5 = "lasagna"
+item6 = "cake"
 # -------------------------------------------- 
 
 # Part 2:
@@ -53,12 +57,18 @@
 # - Print each item available and it's cost. You should have at least 3 items available (a drink, meal, and dessert item). 
 
 # --------------------------------------------
+print("drinks")
+print("1. apple juice	1.00")
+print("2. Pepsi	1.00")
 
+print("meals")
+print("3. lasagna	5.00")
+print("4. sandwich	4.00")
 
-
-
-
-
+print("desserts")
+print("5. apple pie	2.00")
+print("6. cake	4.00")
+print("hello! Welcome to indira's kitchen")
 # -------------------------------------------- 
 
 # Part 3:
@@ -68,10 +78,27 @@
 # - Prompt the user to enter a drink, dessert, and meal (Bonus: give them the option to not order an item)
 # - Return the cost 
 
-# Remember! Functions are meant to be reusable, so write a function that will work when called repeatedly!
+# Remembers! Functions are meant to be reusable, so write a function that will work when called repeatedly!
 
 # --------------------------------------------
+order_drink = input("what drink would you like?")
+order_meal = input ("what meal would you like?")
+order_dessert = input ("what dessert would you like?")
 
+total = 0
+if order_drink == "2"
+	total = 
+
+
+
+
+
+
+cost =  "$22.00"
+print("Welcome to Indira's Kitchen")
+def order_items ():
+print("what would you like?")
+if 
 
 
 
@@ -96,8 +123,9 @@
 # Remember! Functions are meant to be reusable, so write a function that will work when called for each person!
 
 # -------------------------------------------- 
-
-
+cost = 22
+tax = 8.875
+tip = print("how much do you want to tip")
 
 
 
@@ -123,10 +151,15 @@
 
 
 # -------------------------------------------- 
-
-
-
-
+print("recipt")
+#3  
+sandwich  =  12.00
+#2
+pepsi = 2.00
+#4
+apple_pie  = 8.00
+tax = 1.95
+tip = 3.59
 # -------------------------------------------- 
 
 # Part 6: Food Order Bot
