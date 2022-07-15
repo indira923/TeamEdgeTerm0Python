@@ -28,18 +28,12 @@ print("My Simple Calculator")
 # -------------------------------------------- 
 
 # Write a function called add_numbers that will take two numbers and return the sum.
-
-
-
-
-
-
+def add_numbers(a,b):
+	print(a+b)
 
 # Write a function called sub_numbers that will take two numbers and return the difference.
-
-
-
-
+def sub_numbers(a,b):
+	print(a-b)
 
 # ------------
 # Testing Code - Uncomment the code below to test your code!
@@ -67,14 +61,16 @@ print("My Simple Calculator")
 # -------------------------------------------- 
 
 # Write a function called multiply_numbers that will take two numbers and return the product.
-
-
+def multiply_numbers(a,b):
+	print(a*b)
+	
 
 
 
 
 # Write a function called divide_numbers that will take two numbers and return the quotient.
-
+def divide_numbers(a,b):
+	print (a/b)
 
 
 
@@ -101,9 +97,24 @@ print("My Simple Calculator")
 # Write a function that will prompt the user for the operation they want to call and the values they are inputting.
 
 # -------------------------------------------- 
+def  calculator():
+	operator = input("what operation would you like to use? (+, -, /, *)")
+	a = int(input("what is your first number?"))
+	b = int(input("what is your second number?"))
+	total = 0
+
+	if operator == "+":
+		total = add_numbers(a,b)
+	elif operator == "-":
+		total = sub_numbers(a,b)
+	elif operator == "*":
+		total = multiply_numbers(a,b)
+	elif operator == "/":
+		total = divide_numbers(a,b)
+	print(total)
 
 
-
+calculator()
 
 
 
