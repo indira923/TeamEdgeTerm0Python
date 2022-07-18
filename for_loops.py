@@ -110,7 +110,7 @@ for color in colors:
 
 #-->TODO Write a function that prints every letter in a sentence that a user enters.
 def letter():
-    letter = input ("")
-
+    letter = input ("create sentence")
+if letter in sentence 
 
 #-->CHALLENGE: Let the user know which word is the shortest one!
