@@ -1,4 +1,4 @@
-class Superhero:
+class :
     def__init__(self, name, age, powers, antagonist, attack, defense, health_points):
         self.name = name
         self.age = age
@@ -10,5 +10,6 @@ class Superhero:
    def defense("shield", "recovery"):
      pass 
 
-    def attack
-    
+    top_hat = Superhero("Top Hat" "Funny Hat") {"kick" :10, "punch" : 15, "throw_bomb" : 20}
+    saw_hat = 
+
