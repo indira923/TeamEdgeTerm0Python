@@ -2,6 +2,7 @@ from cmath import nanj
 from contextlib import AsyncExitStack
 from ntpath import join
 from typing import ItemsView
+from typing_extensions import Self
 from unicodedata import name
 
 
@@ -20,7 +21,7 @@ friend_1  = Characters("Jonah", 15, 30, 45, 30, 0, ["apple_juice,"])
 ghost_butler = Characters("Lucas",15, 30, 45, 30, 0, ["coco, apple_juice "])
 lost_maid = Characters("Katherine", 20, 40, 40, 50, 0, ["broom"] )
 heartbroken_ghost= Characters("Ingrid", 30, 50,  40, 60, 0 ,["flowers"])
-maid = ("Casey", 50, 70, 70, 0, ["apple_juice"])
+maid = Characters("Casey", 50, 70, 70, 0, ["apple_juice"])
 
 
 class Locations :
@@ -38,7 +39,7 @@ class Actions :
         self.touch = touch
 
 entranced = "There are 3 rooms on this floor. You can go through the hallway, the stairs, and the basement. You need keys to go to these. the butler is here to assist you."
-hallwayd = "The hallway has 4 paintings. The paintings are of a maid, a butler, a lost maid, and someone experiencing heartbreak. There is a vase on the table, and next to it is a doll."
+hallwayd = "The hallway has 4 paintings. The paintings are of a maid, a butler, a lost maid, and a heartbroken women. There is a vase on the table, and next to it is a doll."
 living_roomd = "There is a ghost butler in here, he is friendly :)"
 kitchend = "it is cold in here. "
 bedroomd = "the maid is cleaning in here"
@@ -77,5 +78,37 @@ while active:
     #active = False
 #pick up here later    
 
-def switch_locations(self):
-    
+def switch_locations(main_character): 
+    switch_locations = Locations 
+    switch_locations(main_character)
+
+#def health_points ():
+
+
+def relationship_points ():
+    #if main_character 
+    for x in range (50):
+        print ("you can date now!")
+
+class Talk :
+    def __init__ (self, en_t, hw_t, kt_t, st_t, bd_t, bs_t):
+        self.en_t = en_t
+        self.hw_t = hw_t
+        self.kt.t = kt_t
+        self.st_t = st_t
+        self.bd_t = bd_t 
+        self.bs_t = bs_t 
+
+def health_points ():
+    for x in :
+
+
+
+main_charactert = Talk()
+friend_1t = Talk (["what is going on?"], ["these dolls are scary"], ["we should restock"], ["what is she doing"], ["this room is so clean, can she clean my room too?"], ["what do you think we should do Mina?"] )
+ghost_butler = Talk (["you should pick up keys to go to other rooms"], ["try looking under the paintings and dolls"], ["you should restock"], [""])
+lost_maid = Talk (["..."], [""])
+heartbroken_ghost = Talk(["..."], ["what are they doing down there", ])
+maid = Talk(["..."], [""])
+
+join_party = 
