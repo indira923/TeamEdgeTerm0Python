@@ -1,10 +1,3 @@
-from cmath import nanj
-from contextlib import AsyncExitStack
-from ntpath import join
-from typing import ItemsView
-from typing_extensions import Self
-from unicodedata import name
-
 
 class Characters :
     def __init__(self, name, attack, defense, health_points, temperture_points, relationship_points, inventory) :
@@ -18,14 +11,15 @@ class Characters :
 
 main_character = Characters ("Mina",15, 30, 45, 30, 0, ["apple_juice"])
 friend_1  = Characters("Jonah", 15, 30, 45, 30, 0, ["apple_juice,"])
-ghost_butler = Characters("Lucas",15, 30, 45, 30, 0, ["coco, apple_juice "])
-lost_maid = Characters("Katherine", 20, 40, 40, 50, 0, ["broom"] )
-heartbroken_ghost= Characters("Ingrid", 30, 50,  40, 60, 0 ,["flowers"])
-maid = Characters("Casey", 50, 70, 70, 0, ["apple_juice"])
+ghost_butler = Characters("Lucas",15, 30, 45, 30, 0, ["coco, apple_juice"])
+lost_maid = Characters("Katherine", 20, 40, 40, 50, 0, ["broom"])
+heartbroken_ghost= Characters("Ingrid", 30, 50,  40, 60, 0,["flowers"])
+maid = Characters("Casey", 50, 70, 70, 60, 0, ["apple_juice"])
 
 
 class Locations :
-    def __init__ (self, items, actions, characters, description):
+    def __init__ (self, name, items, actions, characters, description):
+        self.name = name
         self. items = items 
         self.actions = actions
         self.characters = characters
@@ -46,26 +40,45 @@ bedroomd = "the maid is cleaning in here"
 stairsd = "someone is laying dramatically on the stairs, blocking the exit"
 basementd = "there is a mirror in here."
 
-entrance = Locations(["key"],["pick up key"],[friend_1], entranced)
-hallway = Locations(["vase", "dolls", "paintings", "key"],["look inside vase", "look under doll, pick up key, look at paintings,"], [friend_1, ghost_butler], hallwayd)
-living_room = Locations(["tissue", "key",],["pick up tissue, pick up key,look around "], [friend_1, ghost_butler], living_roomd)
-kitchen = Locations(["knife","key", "apple_juice"], ["pick up knife, take apple_juice, talk to ghost, look around"], [friend_1, ghost_butler, lost_maid], kitchend)
-stairs = Locations(["tissue, doll, key"], ["open doll", "pick up key, talk to ghost,look around, "],[friend_1, ghost_butler, lost_maid, heartbroken_ghost], stairsd)
-bedroom = Locations(["broom, key"], ["talk to ghost, touch broom"], [friend_1, ghost_butler, lost_maid, heartbroken_ghost, maid], bedroomd)
-basement = Locations(["mirror"],["touch mirror"],[friend_1, ghost_butler, lost_maid, heartbroken_ghost, maid], basementd)
+entrance = Locations("entrance", ["key"],["pick up key"],[friend_1], entranced)
+hallway = Locations("hallway", ["vase", "dolls", "paintings", "key"],["look inside vase", "look under doll", "pick up key", "look at paintings"], [friend_1, ghost_butler], hallwayd)
+living_room = Locations("living_room", ["key",],["pick up tissue", "pick up key","look around "], [friend_1, ghost_butler], living_roomd)
+kitchen = Locations("kitchen", ["knife","key", "apple_juice"], ["pick up knife", "take apple_juice", "talk to ghost", "look around"], [friend_1, ghost_butler, lost_maid], kitchend)
+stairs = Locations("stairs", ["tissue, doll, key"], ["open doll", "pick up key", "talk to ghost" ,"look around"],[friend_1, ghost_butler, lost_maid, heartbroken_ghost], stairsd)
+bedroom = Locations("bedroom", ["key"], ["pick up key"], [friend_1, ghost_butler, lost_maid, heartbroken_ghost, maid], bedroomd)
+basement = Locations("basement", ["mirror"],["touch mirror"],[friend_1, ghost_butler, lost_maid, heartbroken_ghost, maid], basementd)
 
-
+locations = [entrance, hallway, living_room, kitchen, stairs, bedroom, basement]
 
 
 go_to_kitchen = Actions(["knife","key", "apple_juice"], [hallway, living_room],["there is a knife on the counter and the room is very cold. a ghost is holding flowers."],["ghost, flowers"])
-go_to_living_room = Actions(["key,tissue"],[kitchen, entrance],["you are in the living room."],["key, tissue"])
-go_to_hallway = Actions(["key, dolls, paintings,key"], [stairs, kitchen], ["there are 4 paintings in the hallway, along with a vase and a mirror."], ["paintings, doll"])
+go_to_living_room = Actions(["key"],[kitchen, entrance],["you are in the living room."],["key"])
+go_to_hallway = Actions(["key", "dolls", "paintings"], [stairs, kitchen], ["there are 4 paintings in the hallway, along with a vase and a mirror."], ["paintings, doll"])
 
 
-
+#current_items = key 
 def prompt_user ():
-    reply = input("where do you want to go?")
-    return reply 
+    reply = input("where do you want to go? or do you want to pick up iems or do an action?")
+    # if not switch_locations(reply):
+
+    #     for action in current_location.actions:
+    #         if reply == action:
+    #             print 
+
+    
+    return reply
+
+
+
+
+def switch_locations(reply): 
+    global current_location
+    for location in locations:
+        if reply == location.name:
+            current_location = location
+            return True
+    
+
 
 print("welcome to Eidolon")
 welcome_message = "Hi, I'm Lucas, the butler of this house. I will be guiding you throughout the game."
@@ -74,13 +87,12 @@ active = True
 current_location = entrance
 while active:
     print(current_location.description)
-    prompt_user()
-    #active = False
+    reply = prompt_user()
+    switch_locations(reply)
+    
 #pick up here later    
 
-def switch_locations(main_character): 
-    switch_locations = Locations 
-    switch_locations(main_character)
+
 
 #def health_points ():
 
@@ -99,16 +111,13 @@ class Talk :
         self.bd_t = bd_t 
         self.bs_t = bs_t 
 
-def health_points ():
-    for x in :
-
 
 
 main_charactert = Talk()
 friend_1t = Talk (["what is going on?"], ["these dolls are scary"], ["we should restock"], ["what is she doing"], ["this room is so clean, can she clean my room too?"], ["what do you think we should do Mina?"] )
-ghost_butler = Talk (["you should pick up keys to go to other rooms"], ["try looking under the paintings and dolls"], ["you should restock"], [""])
-lost_maid = Talk (["..."], [""])
-heartbroken_ghost = Talk(["..."], ["what are they doing down there", ])
-maid = Talk(["..."], [""])
+ghost_butler = Talk (["you should pick up keys to go to other rooms"], ["try looking under the paintings and dolls"], ["you should restock"], ["..."], ["almost done!"], ["if you have all the keys you are free to leave."])
+lost_maid = Talk (["..."], ["..."], ["there's some keys in here, you should look around"],["what"], ["we're almost at the exit"], ["i don't remember cleaning this part of the house."], [""])
+heartbroken_ghost = Talk(["..."], ["what are they doing down there"],["..."], ["Oh no! I have lost my lovely maiden! "],["soon we can leave"], ["bye bye"] )
+maid = Talk(["..."], ["..."], ["..."], ["maidenless"], ["everyone made it!"], ["bye!"] )
 
-join_party = 
+
