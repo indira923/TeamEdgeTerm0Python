@@ -12,8 +12,8 @@ class Characters :
 main_character = Characters ("Mina",15, 30, 45, 30, 0, ["apple_juice"])
 friend_1  = Characters("Jonah", 15, 30, 45, 30, 0, ["apple_juice,"])
 ghost_butler = Characters("Lucas",15, 30, 45, 30, 0, ["coco, apple_juice"])
-lost_maid = Characters("Katherine", 20, 40, 40, 50, 0, ["broom"])
-heartbroken_ghost= Characters("Ingrid", 30, 50,  40, 60, 0,["flowers"])
+lost_maid = Characters("Katherine", 20, 40, 40, 50, 0, ["key"])
+heartbroken_ghost= Characters("Ingrid", 30, 50,  40, 60, 0,["key"])
 maid = Characters("Casey", 50, 70, 70, 60, 0, ["apple_juice"])
 
 
@@ -58,15 +58,16 @@ go_to_hallway = Actions(["key", "dolls", "paintings"], [stairs, kitchen], ["ther
 
 #current_items = key 
 def prompt_user ():
-    reply = input("where do you want to go? or do you want to pick up iems or do an action?")
-    # if not switch_locations(reply):
+    reply = input("where do you want to go? or do you want to pick up items or do an action?")
+    if not switch_locations(reply):
 
-    #     for action in current_location.actions:
-    #         if reply == action:
-    #             print 
 
-    
-    return reply
+        def Actions ():
+            global actions
+            for actions in current_location.actions:
+                if reply == locations.action:
+                 locations.action = actions 
+                return True
 
 
 
@@ -113,11 +114,12 @@ class Talk :
 
 
 
-main_charactert = Talk()
 friend_1t = Talk (["what is going on?"], ["these dolls are scary"], ["we should restock"], ["what is she doing"], ["this room is so clean, can she clean my room too?"], ["what do you think we should do Mina?"] )
 ghost_butler = Talk (["you should pick up keys to go to other rooms"], ["try looking under the paintings and dolls"], ["you should restock"], ["..."], ["almost done!"], ["if you have all the keys you are free to leave."])
 lost_maid = Talk (["..."], ["..."], ["there's some keys in here, you should look around"],["what"], ["we're almost at the exit"], ["i don't remember cleaning this part of the house."], [""])
 heartbroken_ghost = Talk(["..."], ["what are they doing down there"],["..."], ["Oh no! I have lost my lovely maiden! "],["soon we can leave"], ["bye bye"] )
 maid = Talk(["..."], ["..."], ["..."], ["maidenless"], ["everyone made it!"], ["bye!"] )
+
+
 
 
