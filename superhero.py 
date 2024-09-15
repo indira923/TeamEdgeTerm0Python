@@ -1,0 +1,14 @@
+class Superhero:
+    def__init__(self, name, age, powers, antagonist, attack, defense, health_points):
+        self.name = name
+        self.age = age
+        self.attack = attack
+        self.defense = defense
+    def__repr(self):
+    return f"Superhero: {self.name}"
+   
+   def defense("shield", "recovery"):
+     pass 
+
+    def attack
+    
