@@ -25,8 +25,8 @@ for x in range(11):
    
 
 #-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
-
-
+for x in range (17):
+    print ("are you: " + str(x))
 
 print("------------------- CHALLENGE 2 : ITERATOR ----------------------")
 
@@ -38,28 +38,35 @@ for x in colors:
     print("The color is: " + x)
 
 #-->TODO: Declare a list with at least 5 animals. You provide the animals.
-animals = []
+animals = ['cat', 'dog', 'capybara', 'snail', 'kangaroo']
 
 #-->TODO: Print all the animals in the array with a for loop. 
 
-
+for x in animals:
+    print("the animal is: " + x)
 
 print("------------------- CHALLENGE 3 : EVEN COUNTDOWN ------------------")
 
 
 #The line below makes a random number between 0-50 and assigns it to the random variable
-random = random.randint(0, 50)
+#random = random.randint(0, 50)
 
 #this if/else statement checks if the number is even using the modulo operator (%)
-if random % 2 == 0:
-    print(str(random) + " is even!")
-else:
-    print(str(random) + " is odd!")
+#    print(str(random) + " is even!")
+#else:
+#    print(str(random) + " is odd!")
 
 #-->TODO: Write a function that counts BACKWARDS from 100 and prints only even numbers
-
+for x in range (100 , 0 , -2):
+    print (x)
 
 #-->TODO: Write a function that counts BACKWARDS from the given random number and prints only odd numbers
+def count(random):
+    for x in range (random, 0, -1):
+        if x % 2 != 0:
+            print(x)
+random = random.randint(0,101)
+count(random)
 
 
 print("------------------- CHALLENGE 4 : Finder ------------------")
@@ -72,15 +79,19 @@ else:
     print("No, that color is not one of my favorites")
 
 #-->TODO Declare a list of any strings you  want: cities, friends, movies, etc.
-
+movies = 'minions', 'thor', 'toy story', 'princess and the frog'
 
 
 #-->TODO Write function to prompt the user to "Guess" if an element is present in your list. Store their response in a variable. 
 #   --> If their guess is in your list, print CONGRATULATIONS!
-
-
+def guess():
+    guess  = input ("Guess a movie on the list")
+    if guess in movies: 
+        print("Congratulations!")
+    else : 
+        print("better luck next time")
 #-->TODO Call your function.
-
+guess()
 
 
 print("------------------- CHALLENGE 5 : Nested ------------------")
@@ -98,6 +109,8 @@ for color in colors:
 
 
 #-->TODO Write a function that prints every letter in a sentence that a user enters.
-
+def letter():
+    letter = input ("create sentence")
+if letter in sentence 
 
 #-->CHALLENGE: Let the user know which word is the shortest one!

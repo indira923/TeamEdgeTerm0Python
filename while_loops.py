@@ -41,8 +41,11 @@ def test_prime(n):
     return True
 
 #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
-
-
+num_1 = 0
+while num_1 <= 100: 
+  if test_prime(num_1):
+    print(num_1)
+  num_1 += 1 
 
 print("------------------- CHALLENGE 2 : FOUND   -------------------")
 
@@ -50,9 +53,12 @@ print("------------------- CHALLENGE 2 : FOUND   -------------------")
 items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
 #-->TODO: Use a while loop to search the contents of a list for the key! If it exists, print "found the key!"
-
-
-
+list_1 = 0
+while list_1 <len(items):
+  print("cat")
+  if items[5] == "key"
+  #print(items[list_1])
+  list_1 += 1 
 print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
 #Oh no! these functions have loops that don't do what they say they should do. Can you fix that?

@@ -34,12 +34,17 @@ dictionary["contents"].append("thing 4")
 print(f"{dictionary['name']} has {dictionary['contents']}")
 print(dictionary)
 
- 
+ #"thing 4", "thing 5" , "thing 6"
 
 #-->TODO: Declare a new dictionary and set at least 4 properties to it including: string, boolean, number, list
 
 ##################################  MY dictionary ########################### #/
-
+dictionary = {
+    "name": "shoes",
+    "has_feet": False, 
+    "color" : ["purple","blue"],
+    "years old": 4
+}
 
 
 
@@ -52,19 +57,19 @@ print(dictionary)
 print("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 #-->TODO: Print your dictionary you created above
-
+print(dictionary)
 
 #-->TODO: Update the dictionary you just created  by adding new properties and values, including list elements, in this section.
-
+dictionary["sizes"] = ["size_1", "size_2", "baby_size"]
 
 #-->TODO: Print your dictionary again and observe changes
-
+print(dictionary)
 
 print("------------------- CHALLENGE 3 : MEHTODS   -------------------")
 
 
 #-->TODO: Make a method that will update your dictionary value. It should take in a dictionary and return it modified.
-
+{name}
 
 #-->TODO: Call the method.
 
